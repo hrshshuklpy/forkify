@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "typeRoots": ["./node_modules/@types", "./starter/src/types"],
+    "module": "commonjs",
+    "target": "es6",
+    "strict": true,
+    "esModuleInterop": true,
+    "baseUrl": "./starter", // Base directory for resolving non-relative module names
+    "paths": {
+      "*": ["src/*"] // Path mapping for your src folder
+    }
+  },
+  "include": ["starter/src/**/*"]
+}
