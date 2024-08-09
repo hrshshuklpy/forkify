@@ -1,6 +1,7 @@
 import views from './views';
 import icons from 'url:../../img/icons.svg';
-import { Fraction } from 'fractional.js';
+import fractional from 'fractional';
+const Fraction = fractional.Fraction;
 
 class recipeView extends views {
   _parentElement = document.querySelector('.recipe');
@@ -42,7 +43,7 @@ class recipeView extends views {
     <div class="recipe__details">
       <div class="recipe__info">
         <svg class="recipe__info-icon">
-          <use href="${icons}.svg#icon-clock"></use>
+          <use href="${icons}#icon-clock"></use>
         </svg>
         <span class="recipe__info-data recipe__info-data--minutes">${
           this._data.cookingTime
@@ -70,7 +71,7 @@ class recipeView extends views {
             this._data.servings + 1
           }">
             <svg>
-              <use href="${icons}.svg#icon-plus-circle"></use>
+              <use href="${icons}#icon-plus-circle"></use>
             </svg>
           </button>
         </div>
@@ -78,12 +79,12 @@ class recipeView extends views {
 
       <div class="recipe__user-generated ${this._data.key ? '' : 'hidden'}">
         <svg>
-          <use href="${icons}.svg#icon-user"></use>
+          <use href="${icons}#icon-user"></use>
         </svg>
       </div>
       <button class="btn--round btn--bookmark">
         <svg class="">
-          <use href="${icons}.svg#icon-bookmark${
+          <use href="${icons}#icon-bookmark${
       this._data.bookmarked ? '-fill' : ''
     }"></use>
         </svg>
