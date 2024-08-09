@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "typeRoots": ["./node_modules/@types", "./starter/src/types"], // This tells TypeScript where to look for type definitions
+    "module": "commonjs", // or "esnext" or whatever your project uses
+    "target": "es6", // or whatever ECMAScript version you're targeting
+    "strict": true, // Enable all strict type-checking options
+    "esModuleInterop": true // Enables compatibility between ES modules and CommonJS modules
+    // other compiler options...
+  },
+  "include": ["src/**/*"] // Ensure TypeScript includes all files in the src directory
+}
