@@ -1,8 +1,8 @@
 import views from './views';
 import icons from 'url:../../img/icons.svg';
-import { Fraction } from 'fractional';
+import Fraction from 'fraction.js'; // Updated import
 
-class recipeView extends views {
+class RecipeView extends views {
   _parentElement = document.querySelector('.recipe');
   _errorMessage = 'No recipe found! Please try again.';
   _message = '';
@@ -93,7 +93,7 @@ class recipeView extends views {
     <div class="recipe__ingredients">
       <h2 class="heading--2">Recipe ingredients</h2>
       <ul class="recipe__ingredient-list">
-        ${this._data.ingredients.map(this._generatemarkupingredient).join('')}
+        ${this._data.ingredients.map(this._generateMarkupIngredient).join('')}
       </ul>
     </div>
 
@@ -120,7 +120,8 @@ class recipeView extends views {
   `;
     return markUp;
   }
-  _generatemarkupingredient(ing) {
+
+  _generateMarkupIngredient(ing) {
     return `<li class="recipe__ingredient">
             <svg class="recipe__icon">
               <use href="${icons}#icon-check"></use>
@@ -136,4 +137,4 @@ class recipeView extends views {
   }
 }
 
-export default new recipeView();
+export default new RecipeView();
